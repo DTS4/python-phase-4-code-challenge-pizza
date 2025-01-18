@@ -47,7 +47,7 @@ def delete_restaurant(id):
             return jsonify({"error": "Restaurant not found"}), 404
         db.session.delete(restaurant)
         db.session.commit()
-        return '', 204  # No content returned on successful delete
+        return '', 204   
 
 
 @app.route("/pizzas", methods=["GET"])
@@ -92,5 +92,5 @@ def create_restaurant_pizza():
 
 
 if __name__ == "__main__":
-    with app.app_context():  # Ensures app context is available for running the app
+    with app.app_context():   
         app.run(port=5555, debug=True)
